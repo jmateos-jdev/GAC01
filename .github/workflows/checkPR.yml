@@ -18,5 +18,16 @@ jobs:
         with:
           node-version: 20
 
+      - name: Instalamos dependencias
+        run: npm i
+
       - name: Correr Prettier Check
+        run: npx prettier . --check
+
+      - name: Corregir Prettier
+        if: ${{ failure() }}
+        run: npx prettier . --write
+
+      - name: Revisar nuevamente
+        if: ${{ failure() }}
         run: npx prettier . --check
