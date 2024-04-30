@@ -13,5 +13,10 @@ jobs:
       - name: Enviar Archivos
         uses: actions/checkout@v4
 
+      - name: Actualizar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
       - name: Correr Prettier Check
         run: npx prettier . --check
