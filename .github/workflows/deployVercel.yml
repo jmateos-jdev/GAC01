@@ -2,7 +2,7 @@ name: Deploy To Vercel
 
 on:
   push:
-    branches: [main]
+    branches: [sinRama]
 
 jobs:
   deploy:
